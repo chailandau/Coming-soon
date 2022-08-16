@@ -1,0 +1,67 @@
+//variables
+$background: #f3f3f3;
+$text: #000000;
+$link: #5a57fc;
+$link-hover: #ff1587;
+
+// media queries
+@mixin mobile {
+    @media screen and (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin mobile-lg {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin desktop-xs {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin desktop-sm {
+    @media screen and (min-width: 1300px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin desktop-lg {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+
+// to rem
+$rem: 16;
+@function rem($val) {
+    @return ($val/$rem) + rem;
+}
+
+// font size, tracking, leading
+@mixin font($font-size, $tracking, $leading) {
+    font-size: ($font-size / $rem) + rem;
+    letter-spacing: $tracking + px;
+    line-height: ($leading / $rem) + rem;
+}
